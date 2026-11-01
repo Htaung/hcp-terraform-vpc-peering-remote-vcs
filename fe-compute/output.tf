@@ -1,5 +1,5 @@
 # 5. Outputs: no private key output needed anymore
-output "fe_key_secret_name" {  
+output "fe_key_secret_name" {
   description = "Secrets Manager secret holding the SSH private key"
   value       = aws_secretsmanager_secret.fe_key.name
 }
