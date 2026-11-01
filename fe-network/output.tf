@@ -3,7 +3,7 @@ output "frontend_vpc_id" {
 }
 
 
-output "frontend_pub_subnet1_id" {
+output "frontend_pub_subnet1_id" {    
   value = aws_subnet.frontend_pub_subnet1.id
 }
 output "frontend_private_subnet1_id" {
