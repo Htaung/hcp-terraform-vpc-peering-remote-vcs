@@ -1,10 +1,16 @@
 #### Backend Outputs
 
-output "be_instances_private_key" {    
-  description = "Private key for SSH access"
-  value       = tls_private_key.be_keypair.private_key_openssh
-  sensitive   = true
+# 5. Outputs: no private key output needed anymore
+output "be_key_secret_name" {
+  description = "Secrets Manager secret holding the SSH private key"
+  value       = aws_secretsmanager_secret.be_key.name
 }
+
+output "be_key_secret_arn" {
+  value = aws_secretsmanager_secret.be_key.arn
+}
+
+
 # terraform output -raw be_instances_private_key > be-sshkey.pem
 # chmod 400 be-sshkey.pem
 # curl -s http://169.254.169.254/latest/meta-data/public-ipv4
