@@ -29,6 +29,6 @@ resource "aws_secretsmanager_secret" "be_key" {
 }
 
 resource "aws_secretsmanager_secret_version" "be_key" {
-  secret_id     = aws_secretsmanager_secret.fe_key.id
+  secret_id     = aws_secretsmanager_secret.be_key.id
   secret_string = tls_private_key.be_keypair.private_key_openssh
 }
